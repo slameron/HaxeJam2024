@@ -487,6 +487,9 @@ class BattleSubstate extends DefaultSubstate
 									var damage = FlxG.random.int(10, 20);
 									if (name[0] == 'Boss')
 										damage *= 3;
+
+									if (characterGuarding.get(t))
+										damage = Math.floor(damage / 3);
 									hurt(t, damage);
 									subCam.shake(.01, .15);
 									FlxTween.tween(s, {x: s.x - 30}, .25, {ease: FlxEase.backOut});
