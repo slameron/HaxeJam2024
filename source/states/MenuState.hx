@@ -80,7 +80,7 @@ class MenuState extends DefaultState
 		});
 
 		mainMenu.addCallback('Options', f -> trace('Options!'));
-		// mainMenu.addCallback('Achievements', f -> trace('Achievements!'));
+		mainMenu.addCallback('Achievements', f -> trace('Achievements!'));
 		mainMenu.addCallback('Credits', f -> trace('Credits!'));
 		#if FLX_DEBUG
 		mainMenu.addCallback('Crash the game', f ->
@@ -147,22 +147,23 @@ class MenuState extends DefaultState
 			}, true, true);
 		mainMenu.addSubmenu('Options', optionsMenu);
 
-		/*var achievementsMenu = new SelectionList(defY, spacing * 2, topBound, bottomBound, 'Achievements');
-			achievementsMenu.maxScroll = 2;
-			for (ach in achievements.achievementsList)
-			{
-				var achImage = new FlxSprite().loadGraphic(achievements.save.get(ach)
-					.unlocked ? achievements.achievements.get(ach)
-					.image : 'assets/images/achievements/locked.png');
-				achImage.scale.set(.5, .5);
-				achImage.updateHitbox();
-				achievementsMenu.addText(achievements.save.get(ach)
-					.unlocked ? achievements.achievements.get(ach)
-					.unlockedDesc : achievements.achievements.get(ach)
-					.lockedDesc, ach,
-					true, achImage, FlxPoint.get(FlxG.width / 2 - achImage.width / 2, achImage.height + 20));
-			}
-			mainMenu.addSubmenu('Achievements', achievementsMenu); */
+		var achievementsMenu = new SelectionList(defY, spacing * 2, topBound, bottomBound, 'Achievements');
+		achievementsMenu.maxScroll = 2;
+		for (ach in achievements.achievementsList)
+		{
+			var achImage = new FlxSprite().loadGraphic(achievements.save.get(ach)
+				.unlocked ? achievements.achievements.get(ach)
+				.image : 'assets/images/achievements/locked.png');
+			achImage.scale.set(.5, .5);
+			achImage.updateHitbox();
+			achievementsMenu.addText(achievements.save.get(ach)
+				.unlocked ? achievements.achievements.get(ach)
+				.unlockedDesc : achievements.achievements.get(ach)
+				.lockedDesc
+					+ ' - LOCKED',
+				ach, true, achImage, FlxPoint.get(FlxG.width / 2 - achImage.width / 2, achImage.height + 20));
+		}
+		mainMenu.addSubmenu('Achievements', achievementsMenu);
 
 		var creditsMenu = new SelectionList(defY, spacing, topBound, bottomBound, 'Credits');
 		creditsMenu.addText('Programming by slameron');

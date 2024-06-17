@@ -133,6 +133,15 @@ class BattleSubstate extends DefaultSubstate
 			}
 		});
 
+		if (playerAdvantage)
+		{
+			FlxG.save.data.playerAdvantages++;
+			FlxG.save.flush();
+
+			if (FlxG.save.data.playerAdvantages >= 10)
+				achievements.unlock('Advantage Seeker');
+		}
+
 		playerTurn = playerAdvantage;
 		battleUI = new BattleUI(0, 0, () ->
 		{
@@ -374,11 +383,37 @@ class BattleSubstate extends DefaultSubstate
 	{
 		trace('$target stats ${characterStats.get(target)}');
 		var amt = amount != null ? amount : FlxG.random.int(min, max);
+
+		var maxStart = characterStats.get(target).maxHealth == characterStats.get(target).health;
+
 		characterStats.get(target).health -= amt;
 		if (characterStats.get(target).health <= 0)
 		{
 			characterStats.get(target).health = 0;
 			battleUI.charactersAlive.set(target, false);
+
+			if (maxStart)
+				achievements.unlock('Strong Man');
+
+			switch (target.split(' ')[0])
+			{
+				case 'Slime':
+					FlxG.save.data.slimeKills++;
+
+				case 'Skeleton':
+					FlxG.save.data.skeletonKills++;
+
+				case 'Boss':
+					FlxG.save.data.bossKills++;
+			}
+			FlxG.save.flush();
+
+			if (FlxG.save.data.slimeKills >= 15)
+				achievements.unlock('Slime Slaughterer');
+			if (FlxG.save.data.skeletonKills >= 15)
+				achievements.unlock('Skeleton Slayer');
+			if (FlxG.save.data.bossKills >= 1)
+				achievements.unlock('Wizworld Champion');
 		}
 
 		var c = FlxColor.RED;

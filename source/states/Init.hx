@@ -65,6 +65,15 @@ class Init extends FlxState
 		if (FlxG.save.data.soundVolume == null)
 			FlxG.save.data.soundVolume = 1;
 
+		if (FlxG.save.data.slimeKills == null)
+			FlxG.save.data.slimeKills = 0;
+		if (FlxG.save.data.skeletonKills == null)
+			FlxG.save.data.skeletonKills = 0;
+		if (FlxG.save.data.bossKills == null)
+			FlxG.save.data.bossKills = 0;
+		if (FlxG.save.data.playerAdvantages == null)
+			FlxG.save.data.playerAdvantages = 0;
+
 		FlxG.save.flush();
 	}
 }

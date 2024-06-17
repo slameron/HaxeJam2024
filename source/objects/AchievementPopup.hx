@@ -9,6 +9,7 @@ class AchievementPopup extends FlxSprite
 		super(0, 0);
 
 		loadGraphic(image);
+
 		var s = (1 * FlxG.height) / 720;
 		scale.set(s, s);
 		updateHitbox();

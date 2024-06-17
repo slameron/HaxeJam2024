@@ -35,51 +35,43 @@ class Achievements
 
 	function initAchievements()
 	{
-		achievementsList.push('Sample Achievement 1');
-		achievements.set('Sample Achievement 1', {
-			image: 'assets/images/achievements/locked.png',
-			lockedDesc: 'Wait one million years to unlock this achievement.',
-			unlockedDesc: 'Unlocked Sample Achievement.',
+		achievementsList.push('Strong Man');
+		achievements.set('Strong Man', {
+			image: 'assets/images/achievements/strongman.png',
+			lockedDesc: 'Defeat an enemy in one hit.',
+			unlockedDesc: 'Defeated an enemy in one hit.',
 			hidden: false,
 			difficulty: 1,
 		});
-		achievementsList.push('Sample Achievement 2');
-		achievements.set('Sample Achievement 2', {
-			image: 'assets/images/achievements/locked.png',
-			lockedDesc: 'Wait two million years to unlock this achievement.',
-			unlockedDesc: 'Unlocked Sample Achievement.',
+		achievementsList.push('Advantage Seeker');
+		achievements.set('Advantage Seeker', {
+			image: 'assets/images/achievements/advantageseeker.png',
+			lockedDesc: 'Engage 10 battles with Player Advantage.',
+			unlockedDesc: 'Engaged 10 battles with Player Advantage.',
 			hidden: false,
 			difficulty: 1,
 		});
-		achievementsList.push('Sample Achievement 3');
-		achievements.set('Sample Achievement 3', {
-			image: 'assets/images/achievements/locked.png',
-			lockedDesc: 'Wait three million years to unlock this achievement.',
-			unlockedDesc: 'Unlocked Sample Achievement.',
+		achievementsList.push('Slime Slaughterer');
+		achievements.set('Slime Slaughterer', {
+			image: 'assets/images/achievements/slimeslaughterer.png',
+			lockedDesc: 'Kill 15 slimes.',
+			unlockedDesc: 'Killed 15 slimes.',
 			hidden: false,
 			difficulty: 1,
 		});
-		achievementsList.push('Sample Achievement 4');
-		achievements.set('Sample Achievement 4', {
-			image: 'assets/images/achievements/locked.png',
-			lockedDesc: 'Wait four million years to unlock this achievement.',
-			unlockedDesc: 'Unlocked Sample Achievement.',
+		achievementsList.push('Skeleton Slayer');
+		achievements.set('Skeleton Slayer', {
+			image: 'assets/images/achievements/skeletonslayer.png',
+			lockedDesc: 'Kill 15 skeletons.',
+			unlockedDesc: 'Killed 15 skeletons.',
 			hidden: false,
 			difficulty: 1,
 		});
-		achievementsList.push('Sample Achievement 5');
-		achievements.set('Sample Achievement 5', {
-			image: 'assets/images/achievements/locked.png',
-			lockedDesc: 'Wait five million years to unlock this achievement.',
-			unlockedDesc: 'Unlocked Sample Achievement.',
-			hidden: false,
-			difficulty: 1,
-		});
-		achievementsList.push('Sample Achievement 6');
-		achievements.set('Sample Achievement 6', {
-			image: 'assets/images/achievements/locked.png',
-			lockedDesc: 'Wait six million years to unlock this achievement.',
-			unlockedDesc: 'Unlocked Sample Achievement.',
+		achievementsList.push('Wizworld Champion');
+		achievements.set('Wizworld Champion', {
+			image: 'assets/images/achievements/wizworldchampion.png',
+			lockedDesc: 'Defeat the final boss.',
+			unlockedDesc: 'Defeated the final boss.',
 			hidden: false,
 			difficulty: 1,
 		});
